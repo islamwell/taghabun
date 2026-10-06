@@ -656,5 +656,15 @@
     }
   }
 
-  console.log('Surah At-Taghābun app initialized successfully. v1.0.4');
+  // Handle direct word modal demo preview parameter
+  const wordIdxParam = urlParams.get('word');
+  if (wordIdxParam !== null) {
+    const wIndex = parseInt(wordIdxParam, 10);
+    const aNum = urlParams.get('ayah') || '1';
+    if (AYAT_DATA[aNum] && AYAT_DATA[aNum][wIndex]) {
+      setTimeout(() => openWordModal(AYAT_DATA[aNum][wIndex]), 80);
+    }
+  }
+
+  console.log('Surah At-Taghābun app initialized successfully. v1.0.5');
 })();
