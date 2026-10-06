@@ -644,5 +644,17 @@
     }
   }, { passive: true });
 
-  console.log('Surah At-Taghābun app initialized successfully. v1.0.1');
+  // Handle direct section query parameter for instant navigation & demos
+  const urlParams = new URLSearchParams(window.location.search);
+  const targetSection = urlParams.get('section');
+  if (targetSection) {
+    const targetEl = document.getElementById(targetSection);
+    if (targetEl) {
+      setTimeout(() => {
+        targetEl.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }, 50);
+    }
+  }
+
+  console.log('Surah At-Taghābun app initialized successfully. v1.0.2');
 })();
