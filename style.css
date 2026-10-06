@@ -1694,3 +1694,9 @@ main {
     gap: 1.5rem;
   }
 }
+
+/* Focus Query State for Direct Section Presentation */
+html[data-focus="intro"] #hero { display: none !important; }
+html[data-focus="ayah-1"] #hero, html[data-focus="ayah-1"] #intro { display: none !important; }
+html[data-focus="ayah-2"] #hero, html[data-focus="ayah-2"] #intro, html[data-focus="ayah-2"] #ayah-1 { display: none !important; }
+html[data-focus="ayah-3"] #hero, html[data-focus="ayah-3"] #intro, html[data-focus="ayah-3"] #ayah-1, html[data-focus="ayah-3"] #ayah-2 { display: none !important; }

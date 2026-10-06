@@ -13,6 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script>
+    const focusParam = new URLSearchParams(window.location.search).get('focus');
+    if (focusParam) document.documentElement.dataset.focus = focusParam;
+  </script>
 </head>
 <body data-section="hero">
   <!-- Interactive Cosmic Canvas Background -->
@@ -647,7 +651,7 @@
         <span class="footer-credit">Content synthesized and inspired by Ustadh Nouman Ali Khan’s Quran Study on Surah 64.</span>
       </div>
       <div class="footer-version-tag">
-        <span class="version-badge" id="version-display">v1.0.3 (updated 2026-10-07 00:15)</span>
+        <span class="version-badge" id="version-display">v1.0.4 (updated 2026-10-07 00:16)</span>
       </div>
     </div>
   </footer>
