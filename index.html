@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#060814">
+  <meta name="description" content="Surah At-Taghabun (Ayats 1-3) - An immersive, colorful, interactive tafseer experience based on Nouman Ali Khan's linguistic insights.">
+  <title>Surah At-Taghābun · سورة التغابن · The Cosmic Audit</title>
+
+  <!-- Google Fonts: Amiri Quran, Amiri, Outfit, Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-section="hero">
+  <!-- Interactive Cosmic Canvas Background -->
+  <canvas id="cosmic-canvas" aria-hidden="true"></canvas>
+
+  <!-- Sticky Global Navigation Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand-badge" aria-label="Surah At-Taghabun home">
+        <span class="brand-num">64</span>
+        <div class="brand-titles">
+          <span class="brand-en">AT-TAGHĀBUN</span>
+          <span class="brand-ar">سُورَةُ التَّغَابُنِ</span>
+        </div>
+      </a>
+
+      <div class="header-controls">
+        <button id="sound-toggle" class="icon-btn" aria-label="Toggle Sound Effects" title="Sound Effects">
+          <svg class="icon icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg class="icon icon-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <a href="#intro" class="nav-chip">Intro</a>
+        <a href="#ayah-1" class="nav-chip">Ayah 1</a>
+        <a href="#ayah-2" class="nav-chip">Ayah 2</a>
+        <a href="#ayah-3" class="nav-chip">Ayah 3</a>
+      </div>
+    </div>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-track">
+      <div id="scroll-progress-bar" class="scroll-progress-fill"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="section hero-section" data-theme="indigo">
+      <div class="hero-content">
+        <div class="hero-badge animate-fade-in">
+          <span class="badge-dot"></span>
+          <span>MADANI · 18 AYATS · CHAPTER 64</span>
+        </div>
+
+        <h1 class="hero-arabic-title animate-pop-in" lang="ar" dir="rtl">
+          سُورَةُ التَّغَابُنِ
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="hero-glow-text">The Mutual Loss & Gain</span>
+          <span class="hero-subtext">Linguistic Tafseer & Exploration inspired by Ustadh Nouman Ali Khan</span>
+        </p>
+
+        <div class="hero-core-quote">
+          <p>“On that Day, the masks fall. The trade you made with your life is audited before the cosmos.”</p>
+        </div>
+
+        <!-- Interactive Hold-to-Enter Orb -->
+        <div class="hold-action-container">
+          <button id="hero-enter-btn" class="hold-orb-btn" aria-label="Press and hold to begin journey">
+            <svg class="orb-ring-svg" viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="orb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#22d3ee" />
+                  <stop offset="50%" stop-color="#818cf8" />
+                  <stop offset="100%" stop-color="#f59e0b" />
+                </linearGradient>
+              </defs>
+              <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+              <circle id="ring-fill" class="ring-fg" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="orb-inner">
+              <span id="orb-label" class="orb-text">Hold to Enter</span>
+              <span class="orb-icon">✦</span>
+            </div>
+          </button>
+          <span class="hold-hint">Press & hold for 1s · or <a href="#intro" class="skip-link">tap here to jump</a></span>
+        </div>
+
+        <div class="hero-scroll-cue">
+          <span class="scroll-text">EXPLORE AYATS 1–3</span>
+          <div class="scroll-chevron"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO SECTION: The Meaning of Taghabun & The Musabbihat -->
+    <section id="intro" class="section intro-section" data-theme="amber">
+      <div class="section-container">
+        <div class="section-header-pill">
+          <span class="pill-number">00</span>
+          <span class="pill-title">DIVINE PROLOGUE</span>
+        </div>
+
+        <h2 class="section-title">
+          What is <span class="accent-text-amber">At-Taghābun</span>?
+        </h2>
+        <p class="section-lead">
+          Understanding the root linguistic weight that makes this Surah one of the most sobering awakenings in the Quran.
+        </p>
+
+        <!-- The Linguistic Breakdown Card -->
+        <div class="intro-grid">
+          <div class="card intro-card glass-panel">
+            <div class="card-icon-tag bg-amber-soft">غ - ب - ن</div>
+            <h3 class="card-heading">The Root: <em>Ghabn</em> (غَبْن)</h3>
+            <p class="card-text">
+              In classical Arabic, <strong>Ghabn</strong> means getting deceived or cheated in a transaction—realizing only <em>after</em> the contract is sealed that you sold a priceless treasure for worthless pennies.
+            </p>
+            <div class="quote-callout">
+              <p>“You walk away thinking you won, only to discover the deal destroyed you.”</p>
+            </div>
+          </div>
+
+          <div class="card intro-card glass-panel">
+            <div class="card-icon-tag bg-cyan-soft">تَفَاعُل</div>
+            <h3 class="card-heading">The Form: <em>Taghābun</em> (تَغَابُن)</h3>
+            <p class="card-text">
+              Form VI in Arabic denotes <strong>mutual reciprocity</strong>. On the Day of Judgment (<em>Yawm At-Taghābun</em>), humanity gathers in a grand cosmic marketplace. Everyone sees each other’s deals.
+            </p>
+            <p class="card-text">
+              The deniers realize they traded eternity for 60 years of vanity. The believers see their small worldly sacrifices blossom into infinite kingdoms.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Value Ledger Widget -->
+        <div class="ledger-widget-box glass-panel">
+          <div class="ledger-header">
+            <div>
+              <span class="badge-mini">INTERACTIVE SIMULATION</span>
+              <h3 class="ledger-title">The Cosmic Ledger: How Values Flip</h3>
+            </div>
+            <div class="ledger-toggle-group" role="group" aria-label="Market view mode">
+              <button id="view-dunya" class="toggle-btn active" type="button">
+                Dunyā Valuation
+              </button>
+              <button id="view-akhirah" class="toggle-btn" type="button">
+                Yawm At-Taghābun
+              </button>
+            </div>
+          </div>
+
+          <p id="ledger-caption" class="ledger-caption">
+            Today's marketplace: What the world celebrates vs. what actually weighs on the scale.
+          </p>
+
+          <div class="ledger-bars" id="ledger-bars">
+            <!-- Rendered by JS dynamically -->
+          </div>
+        </div>
+
+        <!-- The Musabbihat Constellation -->
+        <div class="musabbihat-block glass-panel">
+          <div class="musabbihat-header">
+            <span class="badge-mini bg-violet-soft">QURANIC ARCHITECTURE</span>
+            <h3 class="card-heading">The Sister Surahs: <em>Al-Musabbiḥāt</em> (المسبحات)</h3>
+            <p class="card-text">
+              Five chapters open with the glorification of Allah. Notice the profound linguistic shift highlighted by Ustadh Nouman:
+            </p>
+          </div>
+
+          <div class="musabbihat-row">
+            <div class="surah-chip past-tense">
+              <span class="chip-num">57</span>
+              <span class="chip-name">Al-Hadīd</span>
+              <span class="chip-tense" lang="ar">سَبَّحَ</span>
+              <span class="chip-tense-label">Past Tense</span>
+            </div>
+            <div class="surah-chip past-tense">
+              <span class="chip-num">59</span>
+              <span class="chip-name">Al-Hashr</span>
+              <span class="chip-tense" lang="ar">سَبَّحَ</span>
+              <span class="chip-tense-label">Past Tense</span>
+            </div>
+            <div class="surah-chip past-tense">
+              <span class="chip-num">61</span>
+              <span class="chip-name">As-Saff</span>
+              <span class="chip-tense" lang="ar">سَبَّحَ</span>
+              <span class="chip-tense-label">Past Tense</span>
+            </div>
+            <div class="surah-chip pres-tense">
+              <span class="chip-num">62</span>
+              <span class="chip-name">Al-Jumu'ah</span>
+              <span class="chip-tense" lang="ar">يُسَبِّحُ</span>
+              <span class="chip-tense-label">Present Continuous</span>
+            </div>
+            <div class="surah-chip pres-tense highlight-chip">
+              <span class="chip-num">64</span>
+              <span class="chip-name">At-Taghābun</span>
+              <span class="chip-tense" lang="ar">يُسَبِّحُ</span>
+              <span class="chip-tense-label">Active Right Now</span>
+            </div>
+          </div>
+
+          <div class="musabbihat-insight">
+            <span class="insight-spark">⚡</span>
+            <p>
+              <strong>The Madani Awakening:</strong> As faith cooled and community pressures mounted in Madinah, Allah used <em>Yusabbihu</em> (imperfect tense) in Surah 64: <em>Everything in creation is glorifying Him right now, non-stop. Will you join the chorus or be left behind?</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- 3-Part Structural Blueprint -->
+        <div class="blueprint-card glass-panel">
+          <span class="badge-mini">SURAH OVERVIEW</span>
+          <h3 class="card-heading">The Three Movements of Surah At-Taghābun</h3>
+          <div class="blueprint-steps">
+            <div class="bp-step active-step">
+              <span class="bp-number">01</span>
+              <div class="bp-info">
+                <h4>Ayats 1–4 · The Cosmic Canvas & The Soul</h4>
+                <p>The universe’s glorification, human fitrah, divine fashioning, and intimate knowledge of secrets.</p>
+              </div>
+            </div>
+            <div class="bp-step">
+              <span class="bp-number">02</span>
+              <div class="bp-info">
+                <h4>Ayats 5–10 · Historical Warnings & The Great Audit</h4>
+                <p>Lessons of past nations, resurrection certainty, and the gathering of Yawm At-Taghābun.</p>
+              </div>
+            </div>
+            <div class="bp-step">
+              <span class="bp-number">03</span>
+              <div class="bp-info">
+                <h4>Ayats 11–18 · Living the Faith in the Real World</h4>
+                <p>Coping with calamity, family distractions, greed of the soul, and the generous loan to Allah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AYAH 1 SECTION -->
+    <section id="ayah-1" class="section ayah-section" data-theme="cyan">
+      <div class="section-container">
+        
+        <div class="ayah-top-badge">
+          <div class="ayah-index-pill">
+            <span class="star-icon">۞</span>
+            <span>AYAH 1 · COSMIC GLORIFICATION</span>
+          </div>
+
+          <!-- Audio Recitation Player Button -->
+          <button class="audio-play-btn" data-ayah="1" aria-label="Play recitation for Ayah 1 by Mishary Alafasy">
+            <div class="audio-waves">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span class="play-text">Play Recitation</span>
+            <span class="play-reciter">Alafasy</span>
+          </button>
+        </div>
+
+        <!-- Arabic Calligraphy Card -->
+        <div class="card ayah-card glass-panel">
+          <div class="ayah-card-glow"></div>
+          
+          <div class="arabic-block" lang="ar" dir="rtl">
+            <p class="arabic-text" id="arabic-ayah-1">
+              <!-- Rendered with interactive word spans via JavaScript -->
+            </p>
+          </div>
+
+          <div class="translation-block">
+            <p class="english-translation">
+              “Whatever is in the heavens and whatever is on the earth continuously glorifies Allah. To Him belongs all sovereignty, and to Him belongs all praise, and He is over all things Capable.”
+            </p>
+            <span class="word-tap-hint">Tap any Arabic word above for root morphology & linguistic gems</span>
+          </div>
+        </div>
+
+        <!-- Interactive Widget: The Cosmic Tasbih Button -->
+        <div class="interactive-tool-box glass-panel">
+          <div class="tool-meta">
+            <span class="badge-mini bg-cyan-soft">LIVE INTERACTION</span>
+            <h3 class="tool-title">The Cosmic Tasbīḥ Pulse</h3>
+            <p class="tool-desc">
+              Every galaxy, star, ocean, and atom is glorifying Allah without a split-second pause. Tap to align your heartbeat with the cosmic symphony.
+            </p>
+          </div>
+
+          <div class="tasbih-interactive-area">
+            <button id="tasbih-trigger-btn" class="tasbih-btn" aria-label="Perform Tasbih">
+              <div class="tasbih-ripple"></div>
+              <span class="tasbih-arabic" lang="ar">سُبْحَانَ اللَّهِ</span>
+              <span class="tasbih-sub">Tap to Glorify</span>
+            </button>
+
+            <div class="tasbih-stats">
+              <div class="stat-pill">
+                <span class="stat-label">YOUR TASBĪḤ</span>
+                <span id="tasbih-count" class="stat-value">0</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-label">ARABIC COUNT</span>
+                <span id="tasbih-arabic-count" class="stat-value" lang="ar">٠</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linguistic Gems Grid (Nouman Ali Khan Insights) -->
+        <div class="gems-section">
+          <h3 class="gems-heading">Linguistic Gems & Tafseer Insights</h3>
+          <div class="gems-grid">
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-cyan-soft">GEM 1 · ROOT S-B-H</div>
+              <h4 class="gem-title">Swimming in Celestial Orbits</h4>
+              <p class="gem-body">
+                The root of <em>Tasbīḥ</em> is <em>S-B-H</em> (to swim smoothly or float with effortless speed). In Surah Ya-Sin, Allah says the celestial bodies <em>“swim in their orbits”</em> (<em>kullun fī falakin yasbaḥūn</em>). To make tasbih is to glide harmoniously in divine obedience without friction or resistance.
+              </p>
+            </div>
+
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-violet-soft">GEM 2 · MA VS MAN</div>
+              <h4 class="gem-title">Why <em>Mā</em> (مَا) Instead of <em>Man</em>?</h4>
+              <p class="gem-body">
+                <em>Man</em> refers only to beings of intellect (angels, jinn, humans). Allah intentionally uses <strong>Mā</strong> (<em>“Whatever”</em>) to encompass every lifeless stone, ocean drop, subatomic particle, and distant nebula. The universe is a roaring choir; humanity is the only creation that hesitates.
+              </p>
+            </div>
+
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-amber-soft">GEM 3 · TAQDEEM (FRONTING)</div>
+              <h4 class="gem-title">Power Without Tyranny: <em>Lahu Al-Mulk</em></h4>
+              <p class="gem-body">
+                Grammatically, putting <em>Lahu</em> first means exclusivity: <em>To Him ALONE belongs dominion</em>. In human history, rulers with absolute power (<em>Mulk</em>) are hated or feared; leaders who are loved and praised (<em>Hamd</em>) usually lack true power. Only in Allah are absolute authority and supreme adoration flawlessly united.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AYAH 2 SECTION -->
+    <section id="ayah-2" class="section ayah-section" data-theme="emerald">
+      <div class="section-container">
+        
+        <div class="ayah-top-badge">
+          <div class="ayah-index-pill">
+            <span class="star-icon">۞</span>
+            <span>AYAH 2 · THE GREAT FORK IN HUMANITY</span>
+          </div>
+
+          <!-- Audio Recitation Player Button -->
+          <button class="audio-play-btn" data-ayah="2" aria-label="Play recitation for Ayah 2 by Mishary Alafasy">
+            <div class="audio-waves">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span class="play-text">Play Recitation</span>
+            <span class="play-reciter">Alafasy</span>
+          </button>
+        </div>
+
+        <!-- Arabic Calligraphy Card -->
+        <div class="card ayah-card glass-panel">
+          <div class="ayah-card-glow"></div>
+          
+          <div class="arabic-block" lang="ar" dir="rtl">
+            <p class="arabic-text" id="arabic-ayah-2">
+              <!-- Rendered with interactive word spans via JavaScript -->
+            </p>
+          </div>
+
+          <div class="translation-block">
+            <p class="english-translation">
+              “He is the One Who created you all, yet among you is the denier and among you is the believer. And Allah is All-Seeing of what you do.”
+            </p>
+            <span class="word-tap-hint">Tap any Arabic word above for root morphology & linguistic gems</span>
+          </div>
+        </div>
+
+        <!-- Interactive Widget: The Seed of Fitrah (Kufr vs Iman) -->
+        <div class="interactive-tool-box glass-panel">
+          <div class="tool-meta">
+            <span class="badge-mini bg-emerald-soft">METAPHOR SIMULATION</span>
+            <h3 class="tool-title">The Farmer & The Seed: Uncovering Kufr</h3>
+            <p class="tool-desc">
+              The ancient root of <em>Kufr</em> literally means <strong>to bury a seed in the dirt</strong>. Farmers were called <em>kuffār</em> because they bury things out of sight. Disbelief is burying your innate truth; Īmān is giving it the safety (<em>Amn</em>) to emerge.
+            </p>
+          </div>
+
+          <div class="seed-interactive-area">
+            <div id="seed-visual" class="seed-stage state-buried" role="button" tabindex="0" aria-label="Toggle soil to uncover the seed of fitrah">
+              <div class="soil-layer">
+                <span class="soil-label">The Soil of Neglect & Pride</span>
+              </div>
+              <div class="seed-core">
+                <div class="seed-glow"></div>
+                <div class="seed-leaf">🌱</div>
+              </div>
+            </div>
+
+            <div class="seed-controls">
+              <button id="toggle-seed-btn" class="action-pill-btn">
+                <span id="seed-btn-text">Uncover the Seed (Sprout Īmān)</span>
+              </button>
+              <p id="seed-explanation" class="seed-caption">
+                Currently <strong>Buried (Kufr)</strong>: The light was always there inside the heart, but deliberately masked under layers of heedlessness.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linguistic Gems Grid (Nouman Ali Khan Insights) -->
+        <div class="gems-section">
+          <h3 class="gems-heading">Linguistic Gems & Tafseer Insights</h3>
+          <div class="gems-grid">
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-emerald-soft">GEM 1 · COMMON ORIGIN</div>
+              <h4 class="gem-title"><em>Khalaqakum</em>: We All Began Together</h4>
+              <p class="gem-body">
+                Allah starts with <em>He created you all</em> before mentioning the division. The split into believer and denier is not an inherent biological caste; it is a moral decision made after being gifted life, consciousness, and free will.
+              </p>
+            </div>
+
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-coral-soft">GEM 2 · ORDER OF WORDS</div>
+              <h4 class="gem-title">Why is <em>Kāfir</em> Mentioned First?</h4>
+              <p class="gem-body">
+                <em>“Fa-minkum kāfirun wa-minkum mu’min.”</em> In Madinah, as challenges arose, Allah placed the reality of denial first as a sobering shock to the community. Genuine, persevering faith (<em>Imān</em>) is rare and precious—it is not something to take for granted.
+              </p>
+            </div>
+
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-amber-soft">GEM 3 · VERBS OVER NOUNS</div>
+              <h4 class="gem-title"><em>Bimā Ta’malūn</em>: Deeds, Not Just Labels</h4>
+              <p class="gem-body">
+                Notice that believer and denier are static nouns, but Allah ends with an active verb: <em>“All-Seeing of what you DO (Ta’malūn).”</em> You cannot merely wear the cultural badge of Islam and rest; Allah is actively observing your actual deeds and hidden choices.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AYAH 3 SECTION -->
+    <section id="ayah-3" class="section ayah-section" data-theme="gold">
+      <div class="section-container">
+        
+        <div class="ayah-top-badge">
+          <div class="ayah-index-pill">
+            <span class="star-icon">۞</span>
+            <span>AYAH 3 · SACRED DESIGN & THE ULTIMATE RETURN</span>
+          </div>
+
+          <!-- Audio Recitation Player Button -->
+          <button class="audio-play-btn" data-ayah="3" aria-label="Play recitation for Ayah 3 by Mishary Alafasy">
+            <div class="audio-waves">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span class="play-text">Play Recitation</span>
+            <span class="play-reciter">Alafasy</span>
+          </button>
+        </div>
+
+        <!-- Arabic Calligraphy Card -->
+        <div class="card ayah-card glass-panel">
+          <div class="ayah-card-glow"></div>
+          
+          <div class="arabic-block" lang="ar" dir="rtl">
+            <p class="arabic-text" id="arabic-ayah-3">
+              <!-- Rendered with interactive word spans via JavaScript -->
+            </p>
+          </div>
+
+          <div class="translation-block">
+            <p class="english-translation">
+              “He created the heavens and the earth with purpose and truth, and He fashioned you and made excellent your forms; and to Him is the final return.”
+            </p>
+            <span class="word-tap-hint">Tap any Arabic word above for root morphology & linguistic gems</span>
+          </div>
+        </div>
+
+        <!-- Interactive Widget: The Sacred Geometry / Form Harmonizer -->
+        <div class="interactive-tool-box glass-panel">
+          <div class="tool-meta">
+            <span class="badge-mini bg-gold-soft">AESTHETIC CONTEMPLATION</span>
+            <h3 class="tool-title">Fa-Aḥsana Ṣuwarakum: The Divine Contour</h3>
+            <p class="tool-desc">
+              In a world full of self-doubt and societal beauty filters, Allah reminds you: <em>He shaped you and perfected your design</em>. Tap the geometric rosette below to experience harmony snapping into divine order.
+            </p>
+          </div>
+
+          <div class="geometry-interactive-area">
+            <div class="rosette-wrapper">
+              <svg id="rosette-svg" class="rosette-svg" viewBox="-100 -100 200 200" aria-label="Sacred 8-fold geometric star">
+                <!-- Outer glow circle -->
+                <circle cx="0" cy="0" r="85" class="rosette-outer-ring"></circle>
+                <!-- 8 Diamond Petals generated dynamically or styled -->
+                <g id="rosette-petals" class="petals-group">
+                  <!-- Injected via SVG path -->
+                </g>
+                <circle cx="0" cy="0" r="16" class="rosette-center-core"></circle>
+              </svg>
+            </div>
+
+            <div class="geometry-controls">
+              <button id="harmonize-btn" class="action-pill-btn">
+                <span id="harmonize-btn-text">Harmonize the Geometry</span>
+              </button>
+              <p class="geometry-caption">
+                <em>“Everything crafted bil-Haqq (with deliberate intention) has divine symmetry and purpose.”</em>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linguistic Gems Grid (Nouman Ali Khan Insights) -->
+        <div class="gems-section">
+          <h3 class="gems-heading">Linguistic Gems & Tafseer Insights</h3>
+          <div class="gems-grid">
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-gold-soft">GEM 1 · BIL-HAQQ</div>
+              <h4 class="gem-title">The Universe is Not an Accident</h4>
+              <p class="gem-body">
+                <em>Bil-Haqq</em> means anchored in ultimate purpose, reality, and truth. If a painter spends years crafting a masterpiece, he does not throw it in a trash bin. Because creation is intentional, <strong>judgment and moral accountability are an inevitable necessity</strong>.
+              </p>
+            </div>
+
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-amber-soft">GEM 2 · BEAUTY & FITRAH</div>
+              <h4 class="gem-title">The Antidote to Self-Doubt</h4>
+              <p class="gem-body">
+                Notice the linguistic emphasis: <em>Ṣawwarakum</em> (He contoured you) followed immediately by <em>fa-aḥsana ṣuwarakum</em> (and made your contours excellent). Allah Himself validates your form. You are not an error; your faculties and existence are divinely calculated.
+              </p>
+            </div>
+
+            <div class="gem-card glass-panel">
+              <div class="gem-tag bg-coral-soft">GEM 3 · AL-MASĪR</div>
+              <h4 class="gem-title">Not Just Where You Go, But What You Become</h4>
+              <p class="gem-body">
+                The word <em>Al-Maṣīr</em> originates from the verb <em>Ṣāra</em> (to become, to transform). It does not just mean a geographical destination; it means the final evolution of who you have chosen to become. Everything ends back with the Originator.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SYNTHESIS / REFLECTION SUMMARY SECTION -->
+    <section class="section outro-section" data-theme="violet">
+      <div class="section-container">
+        <div class="synthesis-card glass-panel">
+          <span class="badge-mini bg-violet-soft">THE 3-AYAH ARC</span>
+          <h2 class="synthesis-title">From the Galaxies to the Heart</h2>
+          <div class="arc-timeline">
+            <div class="arc-node">
+              <div class="arc-icon-circle">🌌</div>
+              <h4>1. The Vast Cosmos</h4>
+              <p>Everything in the heavens and earth swims in ceaseless praise.</p>
+            </div>
+            <div class="arc-divider"></div>
+            <div class="arc-node">
+              <div class="arc-icon-circle">⚖️</div>
+              <h4>2. The Human Choice</h4>
+              <p>Created equal, yet divided by whether we bury or nurture the truth.</p>
+            </div>
+            <div class="arc-divider"></div>
+            <div class="arc-node">
+              <div class="arc-icon-circle">👑</div>
+              <h4>3. The Sacred Design</h4>
+              <p>Shaped with divine care, marching forward to the final meeting with Him.</p>
+            </div>
+          </div>
+
+          <div class="next-teaser">
+            <p class="teaser-text">
+              <strong>Coming in Ayah 4:</strong> <em>“He knows what is in the heavens and earth, and He knows what you conceal and what you reveal. And Allah is Knowing of that within the chests.”</em>
+            </p>
+            <a href="#hero" class="return-top-btn">Return to Beginning ✦</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Word-By-Word Linguistic Bottom Sheet Modal (Modern Dialog) -->
+  <dialog id="word-dialog" class="word-modal">
+    <div class="modal-backdrop-blur"></div>
+    <div class="modal-card">
+      <div class="modal-drag-handle"></div>
+      
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge">LINGUISTIC BREAKDOWN</span>
+          <h3 id="modal-word-arabic" class="modal-arabic" lang="ar" dir="rtl">يُسَبِّحُ</h3>
+          <span id="modal-word-translit" class="modal-translit">Yusabbihu</span>
+        </div>
+        <button id="modal-close-btn" class="modal-close-icon" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-field">
+          <span class="field-label">ENGLISH MEANING</span>
+          <p id="modal-word-meaning" class="field-value highlight-meaning">Glorifies continuously / Extols purity</p>
+        </div>
+
+        <div class="modal-field">
+          <span class="field-label">ARABIC ROOT</span>
+          <div id="modal-word-root" class="root-chip-box">
+            <span class="root-letters">س - ب - ح</span>
+          </div>
+        </div>
+
+        <div class="modal-field">
+          <span class="field-label">TAFSEER & LINGUISTIC GEM</span>
+          <p id="modal-word-notes" class="field-value gem-notes">
+            Present continuous tense denoting an ongoing, uninterrupted action without pause.
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Global Footer with Required Semantic Versioning & Timestamp -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-meta">
+        <span class="footer-title">Surah At-Taghābun · Interactive Linguistic Tafseer</span>
+        <span class="footer-credit">Content synthesized and inspired by Ustadh Nouman Ali Khan’s Quran Study on Surah 64.</span>
+      </div>
+      <div class="footer-version-tag">
+        <span class="version-badge" id="version-display">v1.0.1 (updated 2026-10-07 00:11)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
