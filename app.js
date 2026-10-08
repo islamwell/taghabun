@@ -666,5 +666,5 @@
     }
   }
 
-  console.log('Surah At-Taghābun app initialized successfully. v1.0.5');
+  console.log('Surah At-Taghābun app initialized successfully. v1.0.6');
 })();
