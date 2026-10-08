@@ -633,7 +633,107 @@
   });
 
   // =========================================================================
-  // 11. Scroll Progress Bar
+  // 11. Ayah Lens Tab Switcher (Gems vs Interactive Tool)
+  // =========================================================================
+  const lensTabs = document.querySelectorAll('.lens-tab');
+  lensTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const ayah = tab.dataset.ayah;
+      const lens = tab.dataset.lens;
+      const studioCard = tab.closest('.ayah-studio-card');
+      if (!studioCard) return;
+
+      // Update active tab buttons in this card
+      studioCard.querySelectorAll('.lens-tab').forEach(t => {
+        const isCurrent = t === tab;
+        t.classList.toggle('active', isCurrent);
+        t.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+      });
+
+      // Update active content pane in this card
+      studioCard.querySelectorAll('.lens-content-pane').forEach(pane => {
+        pane.classList.remove('active');
+      });
+      const targetPane = document.getElementById(`lens-${lens}-${ayah}`);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+
+      playTone(520, 'sine', 0.15, 0.05);
+      triggerHaptic(10);
+    });
+  });
+
+  // =========================================================================
+  // 12. Flow Stepper Navigation & Stage Tracking
+  // =========================================================================
+  const flowPills = document.querySelectorAll('.flow-pill-btn');
+  const stageIds = ['hero', 'intro', 'ayah-1', 'ayah-2', 'ayah-3', 'synthesis'];
+
+  flowPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const targetId = pill.dataset.target;
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        playTone(600, 'sine', 0.15, 0.05);
+        triggerHaptic(12);
+      }
+    });
+  });
+
+  // Highlight active stepper pill via IntersectionObserver
+  const stageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        flowPills.forEach(pill => {
+          const match = pill.dataset.target === id;
+          pill.classList.toggle('active', match);
+          if (match) {
+            pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+
+  stageIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) stageObserver.observe(el);
+  });
+
+  // Keyboard Stage Navigation (ArrowLeft / ArrowRight)
+  document.addEventListener('keydown', (e) => {
+    if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName) || (wordDialog && wordDialog.open)) return;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      const activeIndex = stageIds.findIndex(id => {
+        const pill = document.querySelector(`.flow-pill-btn[data-target="${id}"]`);
+        return pill && pill.classList.contains('active');
+      });
+      if (activeIndex >= 0 && activeIndex < stageIds.length - 1) {
+        e.preventDefault();
+        const nextId = stageIds[activeIndex + 1];
+        document.getElementById(nextId)?.scrollIntoView({ behavior: 'smooth' });
+        playTone(580, 'sine', 0.15, 0.04);
+      }
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      const activeIndex = stageIds.findIndex(id => {
+        const pill = document.querySelector(`.flow-pill-btn[data-target="${id}"]`);
+        return pill && pill.classList.contains('active');
+      });
+      if (activeIndex > 0) {
+        e.preventDefault();
+        const prevId = stageIds[activeIndex - 1];
+        document.getElementById(prevId)?.scrollIntoView({ behavior: 'smooth' });
+        playTone(520, 'sine', 0.15, 0.04);
+      }
+    }
+  });
+
+  // =========================================================================
+  // 13. Scroll Progress Bar
   // =========================================================================
   const scrollProgressBar = document.getElementById('scroll-progress-bar');
   window.addEventListener('scroll', () => {
@@ -666,5 +766,5 @@
     }
   }
 
-  console.log('Surah At-Taghābun app initialized successfully. v1.0.7');
+  console.log('Surah At-Taghābun app initialized successfully. v1.0.8');
 })();

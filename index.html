@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#060814">
-  <meta name="description" content="Surah At-Taghabun (Ayats 1-3) - An immersive, colorful, interactive tafseer experience based on Nouman Ali Khan's linguistic insights.">
+  <meta name="description" content="Surah At-Taghabun (Ayats 1-3) - A natural, flowing, interactive tafseer experience based on Nouman Ali Khan's linguistic insights.">
   <title>Surah At-Taghābun · سورة التغابن · The Cosmic Audit</title>
 
   <!-- Google Fonts: Amiri Quran, Amiri, Outfit, Cinzel -->
@@ -22,7 +22,7 @@
   <!-- Interactive Cosmic Canvas Background -->
   <canvas id="cosmic-canvas" aria-hidden="true"></canvas>
 
-  <!-- Sticky Global Navigation Header -->
+  <!-- Sticky Global Navigation Header with Flow Stepper -->
   <header class="app-header">
     <div class="header-inner">
       <a href="#hero" class="brand-badge" aria-label="Surah At-Taghabun home">
@@ -32,6 +32,16 @@
           <span class="brand-ar">سُورَةُ التَّغَابُنِ</span>
         </div>
       </a>
+
+      <!-- Flow Stepper Bar: Natural 1-tap navigation -->
+      <nav class="flow-stepper" aria-label="Surah journey steps">
+        <button class="flow-pill-btn active" data-target="hero">Intro</button>
+        <button class="flow-pill-btn" data-target="intro">Prologue</button>
+        <button class="flow-pill-btn" data-target="ayah-1">Ayah 1</button>
+        <button class="flow-pill-btn" data-target="ayah-2">Ayah 2</button>
+        <button class="flow-pill-btn" data-target="ayah-3">Ayah 3</button>
+        <button class="flow-pill-btn" data-target="synthesis">Arc</button>
+      </nav>
 
       <div class="header-controls">
         <button id="sound-toggle" class="icon-btn" aria-label="Toggle Sound Effects" title="Sound Effects">
@@ -46,11 +56,6 @@
             <line x1="17" y1="9" x2="23" y2="15"></line>
           </svg>
         </button>
-
-        <a href="#intro" class="nav-chip">Intro</a>
-        <a href="#ayah-1" class="nav-chip">Ayah 1</a>
-        <a href="#ayah-2" class="nav-chip">Ayah 2</a>
-        <a href="#ayah-3" class="nav-chip">Ayah 3</a>
       </div>
     </div>
     <!-- Scroll Progress Indicator -->
@@ -81,9 +86,25 @@
           <p>“On that Day, the masks fall. The trade you made with your life is audited before the cosmos.”</p>
         </div>
 
-        <!-- Interactive Hold-to-Enter Orb -->
+        <!-- Direct & Flowing CTA Actions -->
+        <div class="hero-flow-actions">
+          <a href="#intro" class="primary-flow-btn">
+            <span>Begin Journey</span>
+            <span class="btn-arrow">↓</span>
+          </a>
+
+          <!-- Quick Jump Stage Chips -->
+          <div class="hero-quick-jumps">
+            <a href="#intro" class="quick-jump-chip">00. Prologue</a>
+            <a href="#ayah-1" class="quick-jump-chip">Ayah 1</a>
+            <a href="#ayah-2" class="quick-jump-chip">Ayah 2</a>
+            <a href="#ayah-3" class="quick-jump-chip">Ayah 3</a>
+          </div>
+        </div>
+
+        <!-- Optional Meditative Hold-to-Enter Orb -->
         <div class="hold-action-container">
-          <button id="hero-enter-btn" class="hold-orb-btn" aria-label="Press and hold to begin journey">
+          <button id="hero-enter-btn" class="hold-orb-btn" aria-label="Press and hold for meditative transition">
             <svg class="orb-ring-svg" viewBox="0 0 120 120">
               <defs>
                 <linearGradient id="orb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -96,16 +117,11 @@
               <circle id="ring-fill" class="ring-fg" cx="60" cy="60" r="54"></circle>
             </svg>
             <div class="orb-inner">
-              <span id="orb-label" class="orb-text">Hold to Enter</span>
+              <span id="orb-label" class="orb-text">Hold 1s</span>
               <span class="orb-icon">✦</span>
             </div>
           </button>
-          <span class="hold-hint">Press & hold for 1s · or <a href="#intro" class="skip-link">tap here to jump</a></span>
-        </div>
-
-        <div class="hero-scroll-cue">
-          <span class="scroll-text">EXPLORE AYATS 1–3</span>
-          <div class="scroll-chevron"></div>
+          <span class="hold-hint">Or hold orb for meditative chime</span>
         </div>
       </div>
     </section>
@@ -125,7 +141,7 @@
           Understanding the root linguistic weight that makes this Surah one of the most sobering awakenings in the Quran.
         </p>
 
-        <!-- The Linguistic Breakdown Card -->
+        <!-- Compact Linguistic Breakdown Grid -->
         <div class="intro-grid">
           <div class="card intro-card glass-panel">
             <div class="card-icon-tag bg-amber-soft">غ - ب - ن</div>
@@ -142,10 +158,10 @@
             <div class="card-icon-tag bg-cyan-soft">تَفَاعُل</div>
             <h3 class="card-heading">The Form: <em>Taghābun</em> (تَغَابُن)</h3>
             <p class="card-text">
-              Form VI in Arabic denotes <strong>mutual reciprocity</strong>. On the Day of Judgment (<em>Yawm At-Taghābun</em>), humanity gathers in a grand cosmic marketplace. Everyone sees each other’s deals.
+              Form VI denotes <strong>mutual reciprocity</strong>. On the Day of Judgment (<em>Yawm At-Taghābun</em>), humanity gathers in a grand marketplace where all transactions are laid bare.
             </p>
             <p class="card-text">
-              The deniers realize they traded eternity for 60 years of vanity. The believers see their small worldly sacrifices blossom into infinite kingdoms.
+              The deniers realize they traded eternity for fleeting vanity; the believers see their small worldly sacrifices blossom into infinite kingdoms.
             </p>
           </div>
         </div>
@@ -222,40 +238,19 @@
           <div class="musabbihat-insight">
             <span class="insight-spark">⚡</span>
             <p>
-              <strong>The Madani Awakening:</strong> As faith cooled and community pressures mounted in Madinah, Allah used <em>Yusabbihu</em> (imperfect tense) in Surah 64: <em>Everything in creation is glorifying Him right now, non-stop. Will you join the chorus or be left behind?</em>
+              <strong>The Madani Awakening:</strong> As faith cooled in Madinah, Allah used <em>Yusabbihu</em>: <em>Everything in creation is glorifying Him right now without pause. Will you join the chorus?</em>
             </p>
           </div>
         </div>
 
-        <!-- 3-Part Structural Blueprint -->
-        <div class="blueprint-card glass-panel">
-          <span class="badge-mini">SURAH OVERVIEW</span>
-          <h3 class="card-heading">The Three Movements of Surah At-Taghābun</h3>
-          <div class="blueprint-steps">
-            <div class="bp-step active-step">
-              <span class="bp-number">01</span>
-              <div class="bp-info">
-                <h4>Ayats 1–4 · The Cosmic Canvas & The Soul</h4>
-                <p>The universe’s glorification, human fitrah, divine fashioning, and intimate knowledge of secrets.</p>
-              </div>
-            </div>
-            <div class="bp-step">
-              <span class="bp-number">02</span>
-              <div class="bp-info">
-                <h4>Ayats 5–10 · Historical Warnings & The Great Audit</h4>
-                <p>Lessons of past nations, resurrection certainty, and the gathering of Yawm At-Taghābun.</p>
-              </div>
-            </div>
-            <div class="bp-step">
-              <span class="bp-number">03</span>
-              <div class="bp-info">
-                <h4>Ayats 11–18 · Living the Faith in the Real World</h4>
-                <p>Coping with calamity, family distractions, greed of the soul, and the generous loan to Allah.</p>
-              </div>
-            </div>
-          </div>
+        <!-- Stage Flow Advance Button -->
+        <div class="stage-flow-footer">
+          <a href="#hero" class="flow-back-link">↑ Intro</a>
+          <a href="#ayah-1" class="flow-next-card-btn">
+            <span>Continue to Ayah 1: The Cosmic Choir</span>
+            <span class="arrow-ico">→</span>
+          </a>
         </div>
-
       </div>
     </section>
 
@@ -263,26 +258,25 @@
     <section id="ayah-1" class="section ayah-section" data-theme="cyan">
       <div class="section-container">
         
-        <div class="ayah-top-badge">
-          <div class="ayah-index-pill">
-            <span class="star-icon">۞</span>
-            <span>AYAH 1 · COSMIC GLORIFICATION</span>
+        <!-- Ayah Studio Card: Unified & Flowing -->
+        <div class="ayah-studio-card glass-panel">
+          <div class="ayah-top-badge">
+            <div class="ayah-index-pill">
+              <span class="star-icon">۞</span>
+              <span>AYAH 1 · COSMIC GLORIFICATION</span>
+            </div>
+
+            <!-- Audio Recitation Player Button -->
+            <button class="audio-play-btn" data-ayah="1" aria-label="Play recitation for Ayah 1 by Mishary Alafasy">
+              <div class="audio-waves">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span class="play-text">Play Recitation</span>
+              <span class="play-reciter">Alafasy</span>
+            </button>
           </div>
 
-          <!-- Audio Recitation Player Button -->
-          <button class="audio-play-btn" data-ayah="1" aria-label="Play recitation for Ayah 1 by Mishary Alafasy">
-            <div class="audio-waves">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <span class="play-text">Play Recitation</span>
-            <span class="play-reciter">Alafasy</span>
-          </button>
-        </div>
-
-        <!-- Arabic Calligraphy Card -->
-        <div class="card ayah-card glass-panel">
-          <div class="ayah-card-glow"></div>
-          
+          <!-- Arabic Calligraphy Block -->
           <div class="arabic-block" lang="ar" dir="rtl">
             <p class="arabic-text" id="arabic-ayah-1">
               <!-- Rendered with interactive word spans via JavaScript -->
@@ -295,66 +289,86 @@
             </p>
             <span class="word-tap-hint">Tap any Arabic word above for root morphology & linguistic gems</span>
           </div>
-        </div>
 
-        <!-- Interactive Widget: The Cosmic Tasbih Button -->
-        <div class="interactive-tool-box glass-panel">
-          <div class="tool-meta">
-            <span class="badge-mini bg-cyan-soft">LIVE INTERACTION</span>
-            <h3 class="tool-title">The Cosmic Tasbīḥ Pulse</h3>
-            <p class="tool-desc">
-              Every galaxy, star, ocean, and atom is glorifying Allah without a split-second pause. Tap to align your heartbeat with the cosmic symphony.
-            </p>
-          </div>
-
-          <div class="tasbih-interactive-area">
-            <button id="tasbih-trigger-btn" class="tasbih-btn" aria-label="Perform Tasbih">
-              <div class="tasbih-ripple"></div>
-              <span class="tasbih-arabic" lang="ar">سُبْحَانَ اللَّهِ</span>
-              <span class="tasbih-sub">Tap to Glorify</span>
+          <!-- Integrated Lens Switcher: No endless vertical stack -->
+          <div class="ayah-lens-bar" role="tablist">
+            <button class="lens-tab active" data-ayah="1" data-lens="gems" role="tab">
+              💎 Linguistic Gems (3)
             </button>
+            <button class="lens-tab" data-ayah="1" data-lens="tool" role="tab">
+              ⚡ Cosmic Tasbīḥ Pulse
+            </button>
+          </div>
 
-            <div class="tasbih-stats">
-              <div class="stat-pill">
-                <span class="stat-label">YOUR TASBĪḤ</span>
-                <span id="tasbih-count" class="stat-value">0</span>
+          <!-- Lens View 1: Linguistic Gems -->
+          <div id="lens-gems-1" class="lens-content-pane active">
+            <div class="gems-grid">
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-cyan-soft">GEM 1 · ROOT S-B-H</div>
+                <h4 class="gem-title">Swimming in Celestial Orbits</h4>
+                <p class="gem-body">
+                  Root <em>S-B-H</em> means to swim smoothly without friction. In Surah Ya-Sin, celestial bodies <em>“swim in their orbits”</em> (<em>kullun fī falakin yasbaḥūn</em>). To make tasbih is to glide harmoniously in divine obedience.
+                </p>
               </div>
-              <div class="stat-pill">
-                <span class="stat-label">ARABIC COUNT</span>
-                <span id="tasbih-arabic-count" class="stat-value" lang="ar">٠</span>
+
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-violet-soft">GEM 2 · MA VS MAN</div>
+                <h4 class="gem-title">Why <em>Mā</em> Instead of <em>Man</em>?</h4>
+                <p class="gem-body">
+                  <em>Mā</em> encompasses inanimate matter—stones, nebulae, photons, and oceans—not just conscious beings. The entire universe is a roaring choir; humanity is the only creation that hesitates.
+                </p>
+              </div>
+
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-amber-soft">GEM 3 · TAQDEEM</div>
+                <h4 class="gem-title">Power Without Tyranny: <em>Lahu Al-Mulk</em></h4>
+                <p class="gem-body">
+                  Fronting <em>Lahu</em> denotes exclusivity: <em>To Him ALONE belongs dominion</em>. Earthly rulers have power (<em>Mulk</em>) but are feared; charismatic figures have love (<em>Hamd</em>) but no control. In Allah alone, sovereignty and pure praise are united.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lens View 2: Interactive Tool -->
+          <div id="lens-tool-1" class="lens-content-pane">
+            <div class="interactive-tool-box glass-inner-panel">
+              <div class="tool-meta">
+                <span class="badge-mini bg-cyan-soft">LIVE INTERACTION</span>
+                <h3 class="tool-title">The Cosmic Tasbīḥ Pulse</h3>
+                <p class="tool-desc">
+                  Every atom is glorifying Allah without a split-second pause. Tap to align your heartbeat with the cosmic symphony.
+                </p>
+              </div>
+
+              <div class="tasbih-interactive-area">
+                <button id="tasbih-trigger-btn" class="tasbih-btn" aria-label="Perform Tasbih">
+                  <div class="tasbih-ripple"></div>
+                  <span class="tasbih-arabic" lang="ar">سُبْحَانَ اللَّهِ</span>
+                  <span class="tasbih-sub">Tap to Glorify</span>
+                </button>
+
+                <div class="tasbih-stats">
+                  <div class="stat-pill">
+                    <span class="stat-label">YOUR TASBĪḤ</span>
+                    <span id="tasbih-count" class="stat-value">0</span>
+                  </div>
+                  <div class="stat-pill">
+                    <span class="stat-label">ARABIC COUNT</span>
+                    <span id="tasbih-arabic-count" class="stat-value" lang="ar">٠</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Linguistic Gems Grid (Nouman Ali Khan Insights) -->
-        <div class="gems-section">
-          <h3 class="gems-heading">Linguistic Gems & Tafseer Insights</h3>
-          <div class="gems-grid">
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-cyan-soft">GEM 1 · ROOT S-B-H</div>
-              <h4 class="gem-title">Swimming in Celestial Orbits</h4>
-              <p class="gem-body">
-                The root of <em>Tasbīḥ</em> is <em>S-B-H</em> (to swim smoothly or float with effortless speed). In Surah Ya-Sin, Allah says the celestial bodies <em>“swim in their orbits”</em> (<em>kullun fī falakin yasbaḥūn</em>). To make tasbih is to glide harmoniously in divine obedience without friction or resistance.
-              </p>
-            </div>
-
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-violet-soft">GEM 2 · MA VS MAN</div>
-              <h4 class="gem-title">Why <em>Mā</em> (مَا) Instead of <em>Man</em>?</h4>
-              <p class="gem-body">
-                <em>Man</em> refers only to beings of intellect (angels, jinn, humans). Allah intentionally uses <strong>Mā</strong> (<em>“Whatever”</em>) to encompass every lifeless stone, ocean drop, subatomic particle, and distant nebula. The universe is a roaring choir; humanity is the only creation that hesitates.
-              </p>
-            </div>
-
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-amber-soft">GEM 3 · TAQDEEM (FRONTING)</div>
-              <h4 class="gem-title">Power Without Tyranny: <em>Lahu Al-Mulk</em></h4>
-              <p class="gem-body">
-                Grammatically, putting <em>Lahu</em> first means exclusivity: <em>To Him ALONE belongs dominion</em>. In human history, rulers with absolute power (<em>Mulk</em>) are hated or feared; leaders who are loved and praised (<em>Hamd</em>) usually lack true power. Only in Allah are absolute authority and supreme adoration flawlessly united.
-              </p>
-            </div>
-          </div>
+        <!-- Stage Flow Navigation -->
+        <div class="stage-flow-footer">
+          <a href="#intro" class="flow-nav-prev">← 00. Prologue</a>
+          <a href="#ayah-2" class="flow-next-card-btn">
+            <span>Next: Ayah 2 · The Human Choice</span>
+            <span class="arrow-ico">→</span>
+          </a>
         </div>
 
       </div>
@@ -364,26 +378,25 @@
     <section id="ayah-2" class="section ayah-section" data-theme="emerald">
       <div class="section-container">
         
-        <div class="ayah-top-badge">
-          <div class="ayah-index-pill">
-            <span class="star-icon">۞</span>
-            <span>AYAH 2 · THE GREAT FORK IN HUMANITY</span>
+        <!-- Ayah Studio Card: Unified & Flowing -->
+        <div class="ayah-studio-card glass-panel">
+          <div class="ayah-top-badge">
+            <div class="ayah-index-pill">
+              <span class="star-icon">۞</span>
+              <span>AYAH 2 · THE GREAT FORK IN HUMANITY</span>
+            </div>
+
+            <!-- Audio Recitation Player Button -->
+            <button class="audio-play-btn" data-ayah="2" aria-label="Play recitation for Ayah 2 by Mishary Alafasy">
+              <div class="audio-waves">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span class="play-text">Play Recitation</span>
+              <span class="play-reciter">Alafasy</span>
+            </button>
           </div>
 
-          <!-- Audio Recitation Player Button -->
-          <button class="audio-play-btn" data-ayah="2" aria-label="Play recitation for Ayah 2 by Mishary Alafasy">
-            <div class="audio-waves">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <span class="play-text">Play Recitation</span>
-            <span class="play-reciter">Alafasy</span>
-          </button>
-        </div>
-
-        <!-- Arabic Calligraphy Card -->
-        <div class="card ayah-card glass-panel">
-          <div class="ayah-card-glow"></div>
-          
+          <!-- Arabic Calligraphy Block -->
           <div class="arabic-block" lang="ar" dir="rtl">
             <p class="arabic-text" id="arabic-ayah-2">
               <!-- Rendered with interactive word spans via JavaScript -->
@@ -396,68 +409,88 @@
             </p>
             <span class="word-tap-hint">Tap any Arabic word above for root morphology & linguistic gems</span>
           </div>
+
+          <!-- Integrated Lens Switcher -->
+          <div class="ayah-lens-bar" role="tablist">
+            <button class="lens-tab active" data-ayah="2" data-lens="gems" role="tab">
+              💎 Linguistic Gems (3)
+            </button>
+            <button class="lens-tab" data-ayah="2" data-lens="tool" role="tab">
+              🌱 The Seed of Fitrah
+            </button>
+          </div>
+
+          <!-- Lens View 1: Linguistic Gems -->
+          <div id="lens-gems-2" class="lens-content-pane active">
+            <div class="gems-grid">
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-emerald-soft">GEM 1 · COMMON ORIGIN</div>
+                <h4 class="gem-title"><em>Khalaqakum</em>: We Began Together</h4>
+                <p class="gem-body">
+                  Allah starts with <em>He created you all</em> before mentioning the division. The split is not a biological caste; it is a moral decision made after being gifted life, consciousness, and free will.
+                </p>
+              </div>
+
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-coral-soft">GEM 2 · WORD ORDER</div>
+                <h4 class="gem-title">Why is <em>Kāfir</em> Mentioned First?</h4>
+                <p class="gem-body">
+                  <em>“Fa-minkum kāfirun wa-minkum mu’min.”</em> In Madinah, as challenges mounted, Allah placed the reality of denial first as a sobering reminder: persevering faith (<em>Imān</em>) is rare and precious.
+                </p>
+              </div>
+
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-amber-soft">GEM 3 · VERBS OVER NOUNS</div>
+                <h4 class="gem-title"><em>Bimā Ta’malūn</em>: Deeds Over Badges</h4>
+                <p class="gem-body">
+                  Believer and denier are static nouns, but Allah concludes with an active verb: <em>“All-Seeing of what you DO (Ta’malūn).”</em> You cannot merely wear the cultural badge; Allah watches living deeds.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lens View 2: Interactive Tool -->
+          <div id="lens-tool-2" class="lens-content-pane">
+            <div class="interactive-tool-box glass-inner-panel">
+              <div class="tool-meta">
+                <span class="badge-mini bg-emerald-soft">METAPHOR SIMULATION</span>
+                <h3 class="tool-title">The Farmer & The Seed: Uncovering Kufr</h3>
+                <p class="tool-desc">
+                  The ancient root of <em>Kufr</em> means <strong>to bury a seed in the dirt</strong>. Farmers were called <em>kuffār</em> because they bury things. Disbelief is burying your innate truth; Īmān is giving it the safety (<em>Amn</em>) to emerge.
+                </p>
+              </div>
+
+              <div class="seed-interactive-area">
+                <div id="seed-visual" class="seed-stage state-buried" role="button" tabindex="0" aria-label="Toggle soil to uncover the seed of fitrah">
+                  <div class="soil-layer">
+                    <span class="soil-label">The Soil of Neglect & Pride</span>
+                  </div>
+                  <div class="seed-core">
+                    <div class="seed-glow"></div>
+                    <div class="seed-leaf">🌱</div>
+                  </div>
+                </div>
+
+                <div class="seed-controls">
+                  <button id="toggle-seed-btn" class="action-pill-btn">
+                    <span id="seed-btn-text">Uncover the Seed (Sprout Īmān)</span>
+                  </button>
+                  <p id="seed-explanation" class="seed-caption">
+                    Currently <strong>Buried (Kufr)</strong>: The light was always inside the heart, but deliberately masked under layers of heedlessness.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Interactive Widget: The Seed of Fitrah (Kufr vs Iman) -->
-        <div class="interactive-tool-box glass-panel">
-          <div class="tool-meta">
-            <span class="badge-mini bg-emerald-soft">METAPHOR SIMULATION</span>
-            <h3 class="tool-title">The Farmer & The Seed: Uncovering Kufr</h3>
-            <p class="tool-desc">
-              The ancient root of <em>Kufr</em> literally means <strong>to bury a seed in the dirt</strong>. Farmers were called <em>kuffār</em> because they bury things out of sight. Disbelief is burying your innate truth; Īmān is giving it the safety (<em>Amn</em>) to emerge.
-            </p>
-          </div>
-
-          <div class="seed-interactive-area">
-            <div id="seed-visual" class="seed-stage state-buried" role="button" tabindex="0" aria-label="Toggle soil to uncover the seed of fitrah">
-              <div class="soil-layer">
-                <span class="soil-label">The Soil of Neglect & Pride</span>
-              </div>
-              <div class="seed-core">
-                <div class="seed-glow"></div>
-                <div class="seed-leaf">🌱</div>
-              </div>
-            </div>
-
-            <div class="seed-controls">
-              <button id="toggle-seed-btn" class="action-pill-btn">
-                <span id="seed-btn-text">Uncover the Seed (Sprout Īmān)</span>
-              </button>
-              <p id="seed-explanation" class="seed-caption">
-                Currently <strong>Buried (Kufr)</strong>: The light was always there inside the heart, but deliberately masked under layers of heedlessness.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Linguistic Gems Grid (Nouman Ali Khan Insights) -->
-        <div class="gems-section">
-          <h3 class="gems-heading">Linguistic Gems & Tafseer Insights</h3>
-          <div class="gems-grid">
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-emerald-soft">GEM 1 · COMMON ORIGIN</div>
-              <h4 class="gem-title"><em>Khalaqakum</em>: We All Began Together</h4>
-              <p class="gem-body">
-                Allah starts with <em>He created you all</em> before mentioning the division. The split into believer and denier is not an inherent biological caste; it is a moral decision made after being gifted life, consciousness, and free will.
-              </p>
-            </div>
-
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-coral-soft">GEM 2 · ORDER OF WORDS</div>
-              <h4 class="gem-title">Why is <em>Kāfir</em> Mentioned First?</h4>
-              <p class="gem-body">
-                <em>“Fa-minkum kāfirun wa-minkum mu’min.”</em> In Madinah, as challenges arose, Allah placed the reality of denial first as a sobering shock to the community. Genuine, persevering faith (<em>Imān</em>) is rare and precious—it is not something to take for granted.
-              </p>
-            </div>
-
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-amber-soft">GEM 3 · VERBS OVER NOUNS</div>
-              <h4 class="gem-title"><em>Bimā Ta’malūn</em>: Deeds, Not Just Labels</h4>
-              <p class="gem-body">
-                Notice that believer and denier are static nouns, but Allah ends with an active verb: <em>“All-Seeing of what you DO (Ta’malūn).”</em> You cannot merely wear the cultural badge of Islam and rest; Allah is actively observing your actual deeds and hidden choices.
-              </p>
-            </div>
-          </div>
+        <!-- Stage Flow Navigation -->
+        <div class="stage-flow-footer">
+          <a href="#ayah-1" class="flow-nav-prev">← Ayah 1: The Cosmos</a>
+          <a href="#ayah-3" class="flow-next-card-btn">
+            <span>Next: Ayah 3 · Sacred Design</span>
+            <span class="arrow-ico">→</span>
+          </a>
         </div>
 
       </div>
@@ -467,26 +500,25 @@
     <section id="ayah-3" class="section ayah-section" data-theme="gold">
       <div class="section-container">
         
-        <div class="ayah-top-badge">
-          <div class="ayah-index-pill">
-            <span class="star-icon">۞</span>
-            <span>AYAH 3 · SACRED DESIGN & THE ULTIMATE RETURN</span>
+        <!-- Ayah Studio Card: Unified & Flowing -->
+        <div class="ayah-studio-card glass-panel">
+          <div class="ayah-top-badge">
+            <div class="ayah-index-pill">
+              <span class="star-icon">۞</span>
+              <span>AYAH 3 · SACRED DESIGN & THE ULTIMATE RETURN</span>
+            </div>
+
+            <!-- Audio Recitation Player Button -->
+            <button class="audio-play-btn" data-ayah="3" aria-label="Play recitation for Ayah 3 by Mishary Alafasy">
+              <div class="audio-waves">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span class="play-text">Play Recitation</span>
+              <span class="play-reciter">Alafasy</span>
+            </button>
           </div>
 
-          <!-- Audio Recitation Player Button -->
-          <button class="audio-play-btn" data-ayah="3" aria-label="Play recitation for Ayah 3 by Mishary Alafasy">
-            <div class="audio-waves">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <span class="play-text">Play Recitation</span>
-            <span class="play-reciter">Alafasy</span>
-          </button>
-        </div>
-
-        <!-- Arabic Calligraphy Card -->
-        <div class="card ayah-card glass-panel">
-          <div class="ayah-card-glow"></div>
-          
+          <!-- Arabic Calligraphy Block -->
           <div class="arabic-block" lang="ar" dir="rtl">
             <p class="arabic-text" id="arabic-ayah-3">
               <!-- Rendered with interactive word spans via JavaScript -->
@@ -499,77 +531,95 @@
             </p>
             <span class="word-tap-hint">Tap any Arabic word above for root morphology & linguistic gems</span>
           </div>
+
+          <!-- Integrated Lens Switcher -->
+          <div class="ayah-lens-bar" role="tablist">
+            <button class="lens-tab active" data-ayah="3" data-lens="gems" role="tab">
+              💎 Linguistic Gems (3)
+            </button>
+            <button class="lens-tab" data-ayah="3" data-lens="tool" role="tab">
+              ✦ Sacred Geometry
+            </button>
+          </div>
+
+          <!-- Lens View 1: Linguistic Gems -->
+          <div id="lens-gems-3" class="lens-content-pane active">
+            <div class="gems-grid">
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-gold-soft">GEM 1 · BIL-HAQQ</div>
+                <h4 class="gem-title">The Universe is Not an Accident</h4>
+                <p class="gem-body">
+                  <em>Bil-Haqq</em> means anchored in ultimate purpose. If a painter crafts a masterpiece, he does not throw it away. Because creation is intentional, <strong>judgment and moral accountability are inevitable</strong>.
+                </p>
+              </div>
+
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-amber-soft">GEM 2 · DIVINE CONTOUR</div>
+                <h4 class="gem-title">The Antidote to Self-Doubt</h4>
+                <p class="gem-body">
+                  <em>Ṣawwarakum</em> (He contoured you) followed by <em>fa-aḥsana ṣuwarakum</em> (and perfected your form). Allah validates your design. You are not an error; your faculties and existence are divinely calculated.
+                </p>
+              </div>
+
+              <div class="gem-card glass-inner-panel">
+                <div class="gem-tag bg-coral-soft">GEM 3 · AL-MASĪR</div>
+                <h4 class="gem-title">Not Just Where You Go, But Who You Become</h4>
+                <p class="gem-body">
+                  <em>Al-Maṣīr</em> originates from <em>Ṣāra</em> (to become, to transform). It does not just mean a location; it means the final evolution of who you have chosen to become before meeting your Lord.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lens View 2: Interactive Tool -->
+          <div id="lens-tool-3" class="lens-content-pane">
+            <div class="interactive-tool-box glass-inner-panel">
+              <div class="tool-meta">
+                <span class="badge-mini bg-gold-soft">AESTHETIC CONTEMPLATION</span>
+                <h3 class="tool-title">Fa-Aḥsana Ṣuwarakum: The Divine Contour</h3>
+                <p class="tool-desc">
+                  In a world of self-doubt and artificial filters, Allah reminds you: <em>He shaped you and perfected your design</em>. Tap below to experience harmony snapping into divine order.
+                </p>
+              </div>
+
+              <div class="geometry-interactive-area">
+                <div class="rosette-wrapper">
+                  <svg id="rosette-svg" class="rosette-svg" viewBox="-100 -100 200 200" aria-label="Sacred 8-fold geometric star">
+                    <circle cx="0" cy="0" r="85" class="rosette-outer-ring"></circle>
+                    <g id="rosette-petals" class="petals-group">
+                      <!-- Injected via SVG path -->
+                    </g>
+                    <circle cx="0" cy="0" r="16" class="rosette-center-core"></circle>
+                  </svg>
+                </div>
+
+                <div class="geometry-controls">
+                  <button id="harmonize-btn" class="action-pill-btn">
+                    <span id="harmonize-btn-text">Harmonize the Geometry</span>
+                  </button>
+                  <p class="geometry-caption">
+                    <em>“Everything crafted bil-Haqq (with deliberate intention) has divine symmetry and purpose.”</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Interactive Widget: The Sacred Geometry / Form Harmonizer -->
-        <div class="interactive-tool-box glass-panel">
-          <div class="tool-meta">
-            <span class="badge-mini bg-gold-soft">AESTHETIC CONTEMPLATION</span>
-            <h3 class="tool-title">Fa-Aḥsana Ṣuwarakum: The Divine Contour</h3>
-            <p class="tool-desc">
-              In a world full of self-doubt and societal beauty filters, Allah reminds you: <em>He shaped you and perfected your design</em>. Tap the geometric rosette below to experience harmony snapping into divine order.
-            </p>
-          </div>
-
-          <div class="geometry-interactive-area">
-            <div class="rosette-wrapper">
-              <svg id="rosette-svg" class="rosette-svg" viewBox="-100 -100 200 200" aria-label="Sacred 8-fold geometric star">
-                <!-- Outer glow circle -->
-                <circle cx="0" cy="0" r="85" class="rosette-outer-ring"></circle>
-                <!-- 8 Diamond Petals generated dynamically or styled -->
-                <g id="rosette-petals" class="petals-group">
-                  <!-- Injected via SVG path -->
-                </g>
-                <circle cx="0" cy="0" r="16" class="rosette-center-core"></circle>
-              </svg>
-            </div>
-
-            <div class="geometry-controls">
-              <button id="harmonize-btn" class="action-pill-btn">
-                <span id="harmonize-btn-text">Harmonize the Geometry</span>
-              </button>
-              <p class="geometry-caption">
-                <em>“Everything crafted bil-Haqq (with deliberate intention) has divine symmetry and purpose.”</em>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Linguistic Gems Grid (Nouman Ali Khan Insights) -->
-        <div class="gems-section">
-          <h3 class="gems-heading">Linguistic Gems & Tafseer Insights</h3>
-          <div class="gems-grid">
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-gold-soft">GEM 1 · BIL-HAQQ</div>
-              <h4 class="gem-title">The Universe is Not an Accident</h4>
-              <p class="gem-body">
-                <em>Bil-Haqq</em> means anchored in ultimate purpose, reality, and truth. If a painter spends years crafting a masterpiece, he does not throw it in a trash bin. Because creation is intentional, <strong>judgment and moral accountability are an inevitable necessity</strong>.
-              </p>
-            </div>
-
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-amber-soft">GEM 2 · BEAUTY & FITRAH</div>
-              <h4 class="gem-title">The Antidote to Self-Doubt</h4>
-              <p class="gem-body">
-                Notice the linguistic emphasis: <em>Ṣawwarakum</em> (He contoured you) followed immediately by <em>fa-aḥsana ṣuwarakum</em> (and made your contours excellent). Allah Himself validates your form. You are not an error; your faculties and existence are divinely calculated.
-              </p>
-            </div>
-
-            <div class="gem-card glass-panel">
-              <div class="gem-tag bg-coral-soft">GEM 3 · AL-MASĪR</div>
-              <h4 class="gem-title">Not Just Where You Go, But What You Become</h4>
-              <p class="gem-body">
-                The word <em>Al-Maṣīr</em> originates from the verb <em>Ṣāra</em> (to become, to transform). It does not just mean a geographical destination; it means the final evolution of who you have chosen to become. Everything ends back with the Originator.
-              </p>
-            </div>
-          </div>
+        <!-- Stage Flow Navigation -->
+        <div class="stage-flow-footer">
+          <a href="#ayah-2" class="flow-nav-prev">← Ayah 2: The Choice</a>
+          <a href="#synthesis" class="flow-next-card-btn">
+            <span>Next: 3-Ayah Arc Synthesis</span>
+            <span class="arrow-ico">→</span>
+          </a>
         </div>
 
       </div>
     </section>
 
     <!-- SYNTHESIS / REFLECTION SUMMARY SECTION -->
-    <section class="section outro-section" data-theme="violet">
+    <section id="synthesis" class="section outro-section" data-theme="violet">
       <div class="section-container">
         <div class="synthesis-card glass-panel">
           <span class="badge-mini bg-violet-soft">THE 3-AYAH ARC</span>
@@ -598,7 +648,10 @@
             <p class="teaser-text">
               <strong>Coming in Ayah 4:</strong> <em>“He knows what is in the heavens and earth, and He knows what you conceal and what you reveal. And Allah is Knowing of that within the chests.”</em>
             </p>
-            <a href="#hero" class="return-top-btn">Return to Beginning ✦</a>
+            <div class="synthesis-actions">
+              <a href="#ayah-1" class="return-top-btn">Revisit Ayah 1 ✦</a>
+              <a href="#hero" class="return-sub-btn">Back to Top ↑</a>
+            </div>
           </div>
         </div>
       </div>
@@ -651,7 +704,7 @@
         <span class="footer-credit">Content synthesized and inspired by Ustadh Nouman Ali Khan’s Quran Study on Surah 64.</span>
       </div>
       <div class="footer-version-tag">
-        <span class="version-badge" id="version-display">v1.0.7 (updated 2026-10-08 07:26)</span>
+        <span class="version-badge" id="version-display">v1.0.8 (updated 2026-10-08 14:36)</span>
       </div>
     </div>
   </footer>
